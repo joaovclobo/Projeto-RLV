@@ -17,7 +17,7 @@ export default function InfosNoticia (props: NoticiaProps) {
             className={`
                 flex flex-col items-center justify-start rounded-2xl 
                 border border-[#744c2448]
-                p-6 g-2
+                p-6
                 bg-[#9e613078] 
                 h-3/5
                 w-3/4
@@ -32,7 +32,7 @@ export default function InfosNoticia (props: NoticiaProps) {
                         <div className='text-sm w-full'> {editoriaisFormatados} - {dataFormatada} </div>
                         <div className="flex justify-center w-full">
                             <button 
-                                className="py-2 px-10 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-75"
+                                className="py-2 px-10 bg-[#8a5c36] text-white rounded-lg shadow-md hover:bg-[#6b533c] focus:outline-none focus:ring-2"
                                 onClick={() => window.open(noticia.link, '_blank')}
                             >
                                 Ver mais

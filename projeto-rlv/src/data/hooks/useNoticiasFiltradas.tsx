@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from 'react'
 import useProcessando from './useProcessando'
 
-export default function useNoticias() {
+export default function useNoticiasFiltradas() {
     const { processando, iniciarProcessamento, finalizarProcessamento } = useProcessando()
     const [noticias, setNoticias] = useState<any[]>([])
     const [noticiaSelecionada, setNoticiaSelecionada] = useState<any>()
