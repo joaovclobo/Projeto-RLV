@@ -6,7 +6,7 @@ interface NoticiaProps {
     selecionar: (noticia: any) => void
 }
 
-export default function NoticiaCorpo (props: NoticiaProps) {
+export default function CardNoticia (props: NoticiaProps) {
     const noticia = props.noticia
 
     const inicioUrlImagem = 'https://agenciadenoticias.ibge.gov.br/'

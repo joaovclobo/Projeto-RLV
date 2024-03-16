@@ -1,5 +1,5 @@
 import Noticia from '@/data/model/Noticia'
-import Noticias from '@/components/Noticias'
+import CardNoticia from '@/components/CardNoticia'
 import Grid from './layout/Grid'
 
 
@@ -13,7 +13,7 @@ export default function ListaDeNoticias(props: ListaDeNoticiasProps) {
         <div className="w-[90%] lg:w-4/5">
             <Grid sm={1} md={2} lg={3}>
                 {props.noticias.map((n: Noticia, indice: number) => {
-                    return <Noticias key={n.id} noticia={n} selecionar={props.noticiaSelecionada} />
+                    return <CardNoticia key={n.id} noticia={n} selecionar={props.noticiaSelecionada} />
                 })}
             </Grid>
         </div>
