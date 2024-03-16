@@ -6,17 +6,17 @@ interface NoticiaProps {
     selecionar: (noticia: any) => void
 }
 
-function formatarData(dataPublicacao: string): string {
+export function formatarData(dataPublicacao: string): string {
     const data = parse(dataPublicacao, 'dd/MM/yyyy HH:mm:ss', new Date());
     return format(data, 'dd/MM/yyyy');
 }
 
-function formatarEditoriais(editorias: string): string {
+export function formatarEditoriais(editorias: string): string {
     const editoriais = editorias.split(";");
     return editoriais.map(valor => valor.toUpperCase()).join(", ");
 }
 
-function obterUrlImagem(imagens: string): string {
+export function obterUrlImagem(imagens: string): string {
     const inicioUrlImagem = 'https://agenciadenoticias.ibge.gov.br/';
     const imagemObjeto = JSON.parse(imagens);
     return inicioUrlImagem + imagemObjeto.image_intro;
