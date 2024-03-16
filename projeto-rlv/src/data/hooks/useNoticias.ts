@@ -1,18 +1,18 @@
 import { useCallback, useEffect, useState } from 'react'
 import useProcessando from './useProcessando'
 
-export default function useStarWars() {
+export default function useNoticias() {
     const { processando, iniciarProcessamento, finalizarProcessamento } = useProcessando()
     const [noticias, setNoticias] = useState<any[]>([])
-    const [noticia, setNoticia] = useState<any>([])
+    const [noticiaSelecionada, setNoticiaSelecionada] = useState<any>()
 
-        const obterNoticias = useCallback(async function () {
-            
+    const obterNoticias = useCallback(async function () {
         try {
             iniciarProcessamento()
-            const resp = await fetch('https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=20')
+            const resp = await fetch('https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=15')
             const dados = await resp.json()
             setNoticias(dados.items)
+            setNoticiaSelecionada(null)
 
         } finally {
             finalizarProcessamento()
@@ -20,13 +20,13 @@ export default function useStarWars() {
         }
     }, [iniciarProcessamento, finalizarProcessamento])
 
-    function selecionarNoticia(noticia: any) {
-        setNoticia(noticia)
-        console.log(noticia)
+    function selecionarNoticia(noticiaSelecionada: any) {
+        setNoticiaSelecionada(noticiaSelecionada)
+        console.log(noticiaSelecionada)
     }
 
     function voltar() {
-        setNoticia(null)
+        setNoticiaSelecionada(null)
     }
 
     useEffect(() => {
@@ -35,6 +35,7 @@ export default function useStarWars() {
 
     return {
         noticias,
+        noticiaSelecionada,
         processando,
         selecionarNoticia,
         voltar
