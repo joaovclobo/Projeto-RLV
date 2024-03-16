@@ -5,7 +5,7 @@ import Grid from './layout/Grid'
 
 interface ListaDeNoticiasProps {
     noticias: Noticia[]
-    noticiaSelecionada: (noticia: Noticia) => void
+    selecionarNoticia: (noticia: Noticia) => void
 }
 
 export default function ListaDeNoticias(props: ListaDeNoticiasProps) {
@@ -13,7 +13,7 @@ export default function ListaDeNoticias(props: ListaDeNoticiasProps) {
         <div className="w-[90%] lg:w-4/5">
             <Grid sm={1} md={2} lg={3}>
                 {props.noticias.map((n: Noticia, indice: number) => {
-                    return <CardNoticia key={n.id} noticia={n} selecionar={props.noticiaSelecionada} />
+                    return <CardNoticia key={n.id} noticia={n} selecionar={props.selecionarNoticia} />
                 })}
             </Grid>
         </div>

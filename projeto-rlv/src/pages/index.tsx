@@ -12,7 +12,7 @@ export default function PaginaInicial() {
                 {processando ? (
                     <div>Processando...</div>
                 ) : noticias.length > 0 ? (
-                    <ListaDeNoticias noticias={noticias} noticiaSelecionada={selecionarNoticia} />
+                    <ListaDeNoticias noticias={noticias} selecionarNoticia={selecionarNoticia} />
                 ) : (
                     <div>Dados não encontrados</div>
                 )}
