@@ -1,5 +1,6 @@
 import useNoticias from '@/data/hooks/useNoticias'
-import Noticia from '@/components/Noticia'
+import Noticias from '@/components/Noticias'
+import ListaDeNoticias from '@/components/ListaNoticias'
 
 export default function PaginaStarWars() {
     const { processando, noticias, voltar, selecionarNoticia } = useNoticias()
@@ -9,7 +10,7 @@ export default function PaginaStarWars() {
             {processando ? (
                 <div>Processando...</div>
             ) : noticias.length > 0 ? (
-                <Noticia noticias={noticias} selecionar={selecionarNoticia} />
+                <ListaDeNoticias noticias={noticias} noticiaSelecionada={selecionarNoticia} />
             ) : (
                 <div>Dados não encontrados</div>
             )}
