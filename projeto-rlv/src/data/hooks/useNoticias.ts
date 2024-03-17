@@ -10,7 +10,7 @@ export default function useNoticias() {
         try {
             iniciarProcessamento()
             //Vai mudar
-            const resp = await fetch('https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=33')
+            const resp = await fetch('https://servicodados.ibge.gov.br/api/v3/noticias/')
             const dados = await resp.json()
             setNoticias(dados.items)
             setNoticiaSelecionada(null)

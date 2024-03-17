@@ -3,6 +3,7 @@ import Menu from '@/components/layout/Menu'
 import ListaDeNoticias from '@/components/ListaNoticias'
 import InfosNoticia from '@/components/InfosNoticia'
 import MenuFiltroNoticias from '@/components/MenuFiltroNoticias'
+import Aviso from '@/components/layout/Aviso'
 
 export default function PaginaBuscarNoticias() {
     const { processando, noticias, noticiaSelecionada, selecionarNoticia, defineFiltros } = useNoticiasFiltradas()
@@ -10,10 +11,9 @@ export default function PaginaBuscarNoticias() {
     return (
         <div className='flex flex-col bg-[#fcebdc]'>
             <Menu/>
-
             <div className="flex flex-col gap-5 p-5 justify-center items-center relative">
                 {processando ? (
-                    <div className='flex justify-center items-center h-screen text-black text-20xl'>Buscando notícias...</div>
+                    <Aviso>Buscando notícias...</Aviso>
                 ) : noticiaSelecionada != null ?(
                     <div className='flex flex-col gap-5 p-5 justify-center items-center relative"'>
                         <InfosNoticia noticia={noticiaSelecionada} />
@@ -24,7 +24,7 @@ export default function PaginaBuscarNoticias() {
                         <ListaDeNoticias noticias={noticias} selecionarNoticia={selecionarNoticia} />
                     </div>
                 ) : (
-                    <div>Dados não encontrados</div>
+                    <Aviso><div>Notícias não encontradas...</div> <div>Tente novamente!</div></Aviso>
                 )}
             </div>
         </div>
