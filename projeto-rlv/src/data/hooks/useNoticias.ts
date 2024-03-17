@@ -9,8 +9,7 @@ export default function useNoticias() {
     const obterNoticias = useCallback(async function () {
         try {
             iniciarProcessamento()
-            //Vai mudar
-            const resp = await fetch('https://servicodados.ibge.gov.br/api/v3/noticias/')
+            const resp = await fetch('https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=9')
             const dados = await resp.json()
             setNoticias(dados.items)
             setNoticiaSelecionada(null)

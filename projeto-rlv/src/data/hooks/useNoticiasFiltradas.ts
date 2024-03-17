@@ -25,8 +25,6 @@ export default function useNoticiasFiltradas() {
         try {
             iniciarProcessamento()
 
-            console.log(filtros)
-
             let url = 'https://servicodados.ibge.gov.br/api/v3/noticias/'
 
             if (filtros.palavraChave != '') {
@@ -42,12 +40,9 @@ export default function useNoticiasFiltradas() {
                 url += `?qtd=9`
             }
 
-            console.log(url)
             const resp = await fetch(url)
             const dados = await resp.json()
             setNoticias(dados.items)
-
-            console.log(dados.items)
 
         } finally {
             finalizarProcessamento()
@@ -57,12 +52,10 @@ export default function useNoticiasFiltradas() {
 
     function selecionarNoticia(noticiaSelecionada: any) {
         setNoticiaSelecionada(noticiaSelecionada)
-        console.log(noticiaSelecionada)
     }
 
     function defineFiltros(filtros: any) {
         setFiltros(filtros)
-        console.log(filtros)
     }
 
     useEffect(() => {

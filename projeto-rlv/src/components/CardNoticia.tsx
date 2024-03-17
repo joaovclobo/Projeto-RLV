@@ -28,7 +28,6 @@ export function obterUrlImagem(imagens: string): string {
 
         } else {
             urlImagem += fimUrlDefault
-            console.log(urlImagem)
         }
     }
     return urlImagem
