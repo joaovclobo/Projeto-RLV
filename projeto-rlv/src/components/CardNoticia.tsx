@@ -32,19 +32,19 @@ export default function CardNoticia (props: NoticiaProps) {
         <div
             className={`
                 flex flex-col rounded-2xl
-                border border-[#744c2448]
-                p-3
+                border border-[#744c24] border-opacity-30
+                p shadow-xl
                 bg-[#9e613078]
             `}
         >
             <button onClick={() => props.selecionar(noticia)}> <img src={urlImagem} alt="Imagem da Noticia" loading='eager' className="rounded-xl"/></button>
-            <div className="flex flex-col p-3 gap-4 ">
+            <div className="flex flex-col p-4 gap-4 ">
                 <div className="flex justify-between items-center">
-                    <button className="text-2xl text-left font-black hover:text-[#8a5c36]" onClick={() => props.selecionar(noticia)}>
+                    <button className="text-2xl text-justify font-black hover:text-[#8a5c36]" onClick={() => props.selecionar(noticia)}>
                         {noticia.titulo}
                     </button>
                 </div>
-                <div className='text-sm text-left gap-2 w-full'> {editoriaisFormatados} - {dataFormatada} </div>
+                <div className=' text-[14px] text-left gap-2 w-full'> {editoriaisFormatados} - {dataFormatada} </div>
             </div>
         </div>
     )

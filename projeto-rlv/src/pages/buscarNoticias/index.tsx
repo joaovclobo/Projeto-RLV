@@ -5,13 +5,13 @@ import InfosNoticia from '@/components/InfosNoticia'
 import MenuFiltroNoticias from '@/components/MenuFiltroNoticias'
 
 export default function PaginaBuscarNoticias() {
-    const { processando, noticias, voltar, noticiaSelecionada, selecionarNoticia } = useNoticiasFiltradas()
+    const { processando, noticias, noticiaSelecionada, selecionarNoticia, defineFiltros } = useNoticiasFiltradas()
 
     return (
         <div className='flex flex-col bg-[#fcebdc]'>
             <Menu/>
             <div className="flex flex-col py-8 justify-center items-center relative">
-                <MenuFiltroNoticias/>
+                <MenuFiltroNoticias defineFiltros={defineFiltros}/>
             </div>
             <div className="flex flex-col gap-5 p-5 justify-center items-center relative">
                 {processando ? (

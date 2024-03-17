@@ -10,7 +10,7 @@ export default function useNoticias() {
         try {
             iniciarProcessamento()
             //Vai mudar
-            const resp = await fetch('https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=15')
+            const resp = await fetch('https://servicodados.ibge.gov.br/api/v3/noticias/?qtd=33')
             const dados = await resp.json()
             setNoticias(dados.items)
             setNoticiaSelecionada(null)
@@ -23,13 +23,8 @@ export default function useNoticias() {
 
     function selecionarNoticia(noticiaSelecionada: any) {
         setNoticiaSelecionada(noticiaSelecionada)
-        console.log(noticiaSelecionada)
     }
-
-    function voltar() {
-        setNoticiaSelecionada(null)
-    }
-
+    
     useEffect(() => {
         obterNoticias()
     }, [obterNoticias])
@@ -39,6 +34,5 @@ export default function useNoticias() {
         noticiaSelecionada,
         processando,
         selecionarNoticia,
-        voltar
     }
 }

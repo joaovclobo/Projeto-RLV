@@ -5,6 +5,7 @@ export default function useNoticiasFiltradas() {
     const { processando, iniciarProcessamento, finalizarProcessamento } = useProcessando()
     const [noticias, setNoticias] = useState<any[]>([])
     const [noticiaSelecionada, setNoticiaSelecionada] = useState<any>()
+    const [filtros, setFiltros] = useState<any>()
 
     const obterNoticias = useCallback(async function () {
         try {
@@ -26,8 +27,9 @@ export default function useNoticiasFiltradas() {
         console.log(noticiaSelecionada)
     }
 
-    function voltar() {
-        setNoticiaSelecionada(null)
+    function defineFiltros(filtros: any) {
+        setFiltros(filtros)
+        console.log(filtros)
     }
 
     useEffect(() => {
@@ -39,6 +41,6 @@ export default function useNoticiasFiltradas() {
         noticiaSelecionada,
         processando,
         selecionarNoticia,
-        voltar
+        defineFiltros,
     }
 }
