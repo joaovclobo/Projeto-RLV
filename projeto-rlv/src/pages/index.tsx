@@ -4,7 +4,7 @@ import ListaDeNoticias from '@/components/ListaNoticias'
 import InfosNoticia from '@/components/InfosNoticia'
 
 export default function PaginaInicial() {
-    const { processando, noticias, voltar, noticiaSelecionada, selecionarNoticia } = useNoticias()
+    const { processando, noticias, noticiaSelecionada, selecionarNoticia } = useNoticias()
 
     return (
         <div className='flex flex-col bg-[#fcebdc]'>
