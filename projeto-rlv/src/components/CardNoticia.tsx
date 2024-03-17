@@ -17,12 +17,21 @@ export function formatarEditoriais(editorias: string): string {
 }
 
 export function obterUrlImagem(imagens: string): string {
-    // TODO: Aqui está o problema
+    let urlImagem = 'https://agenciadenoticias.ibge.gov.br/';
+    const fimUrlDefault = 'images/agenciadenoticias/ibge/AgNot_menor.jpg'
 
-    // const inicioUrlImagem = 'https://agenciadenoticias.ibge.gov.br/';
-    // const imagemObjeto = JSON.parse(imagens);
-    // return inicioUrlImagem + imagemObjeto.image_intro;
-    return 'https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/estatisticas_economicas/2024_03/PMS-THUMB-AgenciaBrasilia.jpg'
+    if (imagens != ''){
+        const imagemObjeto = JSON.parse(imagens);
+
+        if (imagemObjeto.image_intro != ''){
+            urlImagem += imagemObjeto.image_intro            
+
+        } else {
+            urlImagem += fimUrlDefault
+            console.log(urlImagem)
+        }
+    }
+    return urlImagem
 }
 
 export default function CardNoticia (props: NoticiaProps) {

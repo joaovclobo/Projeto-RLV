@@ -16,7 +16,6 @@ export default function PaginaBuscarNoticias() {
                     <div className='flex justify-center items-center h-screen text-black text-20xl'>Buscando notícias...</div>
                 ) : noticiaSelecionada != null ?(
                     <div className='flex flex-col gap-5 p-5 justify-center items-center relative"'>
-                        <MenuFiltroNoticias defineFiltros={defineFiltros}/>
                         <InfosNoticia noticia={noticiaSelecionada} />
                     </div>
                 ) : noticias.length > 0 ? (
