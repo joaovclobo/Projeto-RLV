@@ -17,9 +17,12 @@ export function formatarEditoriais(editorias: string): string {
 }
 
 export function obterUrlImagem(imagens: string): string {
-    const inicioUrlImagem = 'https://agenciadenoticias.ibge.gov.br/';
-    const imagemObjeto = JSON.parse(imagens);
-    return inicioUrlImagem + imagemObjeto.image_intro;
+    // TODO: Aqui está o problema
+
+    // const inicioUrlImagem = 'https://agenciadenoticias.ibge.gov.br/';
+    // const imagemObjeto = JSON.parse(imagens);
+    // return inicioUrlImagem + imagemObjeto.image_intro;
+    return 'https://agenciadenoticias.ibge.gov.br/images/agenciadenoticias/estatisticas_economicas/2024_03/PMS-THUMB-AgenciaBrasilia.jpg'
 }
 
 export default function CardNoticia (props: NoticiaProps) {

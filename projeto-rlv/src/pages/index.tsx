@@ -11,8 +11,8 @@ export default function PaginaInicial() {
             <Menu/>
             <div className="flex flex-col gap-5 p-8 justify-center items-center relative">
                 {processando ? (
-                    <div>Processando...</div>
-                ) : noticiaSelecionada != null ?(
+                    <div className='flex justify-center items-center h-screen text-black text-20xl'>Buscando notícias...</div>
+                    ) : noticiaSelecionada != null ?(
                     <InfosNoticia noticia={noticiaSelecionada} />
                 ) : noticias.length > 0 ? (
                     <ListaDeNoticias noticias={noticias} selecionarNoticia={selecionarNoticia} />

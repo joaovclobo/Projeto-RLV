@@ -10,16 +10,20 @@ export default function PaginaBuscarNoticias() {
     return (
         <div className='flex flex-col bg-[#fcebdc]'>
             <Menu/>
-            <div className="flex flex-col py-8 justify-center items-center relative">
-                <MenuFiltroNoticias defineFiltros={defineFiltros}/>
-            </div>
+
             <div className="flex flex-col gap-5 p-5 justify-center items-center relative">
                 {processando ? (
-                    <div>Processando...</div>
+                    <div className='flex justify-center items-center h-screen text-black text-20xl'>Buscando notícias...</div>
                 ) : noticiaSelecionada != null ?(
-                    <InfosNoticia noticia={noticiaSelecionada} />
+                    <div className='flex flex-col gap-5 p-5 justify-center items-center relative"'>
+                        <MenuFiltroNoticias defineFiltros={defineFiltros}/>
+                        <InfosNoticia noticia={noticiaSelecionada} />
+                    </div>
                 ) : noticias.length > 0 ? (
-                    <ListaDeNoticias noticias={noticias} selecionarNoticia={selecionarNoticia} />
+                    <div className='flex flex-col gap-5 p-5 justify-center items-center relative"'>
+                        <MenuFiltroNoticias defineFiltros={defineFiltros}/>
+                        <ListaDeNoticias noticias={noticias} selecionarNoticia={selecionarNoticia} />
+                    </div>
                 ) : (
                     <div>Dados não encontrados</div>
                 )}
